@@ -35,16 +35,16 @@ function Page() {
       </div>
 
 
-      <div className="absolute z-0 -bottom-20 -right-20 ">
+      <div className="absolute z-0 bottom-[-20rem] right-[-20rem] ">
         <Image  src={'/orangeOrb.svg'}
-                  width={500}
-                  height={500}
+                  width={1000}
+                  height={1000}
                   alt={'Feather'}/>
       </div>
-      <div className="absolute z-0 -top-20 -left-20">
+      <div className="absolute z-0 top-[-20rem] left-[-20rem]">
         <Image  src={'/purpleOrb.svg'}
-                  width={500}
-                  height={500}
+                  width={1000}
+                  height={1000}
                   alt={'Feather'}/>
       </div>
     </div>
