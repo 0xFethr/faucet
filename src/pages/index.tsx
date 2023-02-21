@@ -1,5 +1,4 @@
 import { Web3Button } from '@web3modal/react'
-import { useState } from 'react'
 import { useAccount, usePrepareContractWrite, useContractWrite} from 'wagmi'
 import {faucetABI} from '../contract/faucet'
 import Account from '../components/Account'
@@ -9,22 +8,21 @@ import Image from 'next/image'
 
 function Page() {
   const { isConnected,address } = useAccount()
-  const [transactionData, setTransactionData] = useState<string|undefined>("");
   const {config,error} = usePrepareContractWrite({
-    address: '0xf380e1fd009DB51fCEe82E22753C9cD1D8A8fad1',
+    address: '0xa4E6E77AC66d14d9DC1931112A134F5dd73c85aD',
     abi: faucetABI,
     functionName: 'faucet',
     chainId:goerli.id,
     args:[address],
   })
   const { data, isLoading, isSuccess, write }  = useContractWrite(config)
+
   const faucetFunction = async () => {
     if(!isConnected) {
       alert('Please connect your wallet');
       return
     }
-    const res = write?.()
-    setTransactionData(data?.hash)
+    write?.()
   }
   
   return (
@@ -58,7 +56,7 @@ function Page() {
             <h2>Your Transactions</h2>
           </div>
           <div className='flex w-full justify-between px-5  rounded-lg font-[100]'>
-              <p>{transactionData?transactionData:'No Data'}</p>
+              <p>{data?.hash}</p>
           </div>
         </div>
       </div>
