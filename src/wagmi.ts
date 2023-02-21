@@ -4,7 +4,7 @@ import { sepolia,goerli,mainnet,polygonMumbai } from 'wagmi/chains'
 export const walletConnectProjectId = 'da9165b35fcee4df2a8c5af806e66463'
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet, ...(process.env.NODE_ENV === 'development' ? [goerli,sepolia,polygonMumbai] : [])],
+  [mainnet, ...(process.env.NODE_ENV === 'development' ? [goerli,sepolia,polygonMumbai] : [goerli])],
   [walletConnectProvider({ projectId: walletConnectProjectId })],
 )
 
