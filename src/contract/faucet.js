@@ -1,6 +1,4 @@
-import {ethers} from './ethers';
-
-const faucetABI =  [
+export const faucetABI =  [
     {
         "inputs": [
             {

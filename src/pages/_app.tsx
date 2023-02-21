@@ -15,7 +15,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={client}>
       <NextHead>
-        <title>FetherFaucet</title>
+        <title>FethrFaucet</title>
       </NextHead>
 
       {mounted && <Component {...pageProps} />}
