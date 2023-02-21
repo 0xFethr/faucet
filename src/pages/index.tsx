@@ -30,7 +30,7 @@ function Page() {
   return (
     <div className='w-screen h-screen flex flex-col items-center justify-center relative'>
       <nav className='w-screen  flex items-center justify-between px-5 '>
-        <div className='text-center flex items-center justify-center font-[800] h-[20%]'>
+        <div className='text-center flex items-center justify-center font-[800] h-[20%] text-3xl'>
           <Image src={'/logo.svg'} 
                  width={100} 
                  height={100} 
